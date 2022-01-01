@@ -1,1 +1,1 @@
-console.log('Hello vue');
+console.log('Hello vue')
