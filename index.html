@@ -1,15 +1,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-sclae=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Vue</title>
-    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 
 <body>
-    <h1> Hello, Vue :)</h1>
+    <!--app and app-2 explain DECLERATIVE RENDERING-->
 
-    <script>src="app.js"</script>
+    <!--Show message from script file-->
+    <div id="app"> 
+        {{ message }} 
+    </div>
+
+    <!-- v-bind attribute is a DIRECTIVE, directive are prefixed with 'v-'
+    to indicate that they are special attributes provided by Vue-->
+
+    <div id="app-2">
+        <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound title!
+        </span>
+    </div>
+    
+    
+    
+    <!-- CONDITIONAL AND LOOPS-->
+    
+    <!--Based on a boolean show the following message-->
+    <div id="app-3">
+        <span v-if="seen">Now you see me</span>
+    </div>
+
+
+    <!-- Array-->
+    <!-- V-For directive used for displaying a list of items
+    using the data from an array-->
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text}}
+            </li>
+        </ol>
+    </div>
+
+    <!--HANDLING USER INPUT -->
+    <!-- v-on directive to attach event listeners that invoke methods-->
+    <div id="app-5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+
+
+
+    <script src="app.js"> </script>
 </body>
 
 </html>
